@@ -17,14 +17,8 @@ byte2 = 0xBF
 result1 = mul02(byte1)
 result2 = mul03(byte2)
 
-print(byte1)
-print(byte2)
-
 
 print(hex(result1))
 print(hex(result2))
-
-print(result1)
-print(result2)
 
 
