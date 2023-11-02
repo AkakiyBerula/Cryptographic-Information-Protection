@@ -18,7 +18,7 @@ result1 = mul02(byte1)
 result2 = mul03(byte2)
 
 
-print(hex(result1))
-print(hex(result2))
+print(f"{hex(byte1)} * 02 = {hex(result1)}")
+print(f"{hex(byte2)} * 03 = {hex(result2)}")
 
 
