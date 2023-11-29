@@ -56,7 +56,6 @@ def generate_keypair(bits):
 
 def encrypt(message, public_key):
     p, g, y = public_key
-    k = random.randint(1, p - 2)
     plaintext_numbers = text_to_numbers(message)
     encrypted_message = []
     for num in plaintext_numbers:
