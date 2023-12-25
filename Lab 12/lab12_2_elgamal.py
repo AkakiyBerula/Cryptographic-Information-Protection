@@ -81,8 +81,7 @@ a = 1
 b = 1
 mod_p = 23
 message = (12, 19)
-#g = find_generator(a, b, mod_p)
-g = (17, 20)
+g = find_generator(a, b, mod_p)
 private_key, public_key = generate_keypair(g, a, mod_p)
 
 encrypted_message = encrypt(message, public_key, g, a, mod_p)
