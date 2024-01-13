@@ -131,6 +131,9 @@ S = [
 ]
 
 
+KEY_SHIFTS = [1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1]
+
+
 def permutation(initial, table):
     return [initial[i - 1] for i in table]
 
@@ -141,9 +144,6 @@ def xor(a, b):
 
 def left_shift(key, shifts):
     return key[shifts:] + key[:shifts]
-
-
-KEY_SHIFTS = [1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1]
 
 
 def generate_subkeys(key):
@@ -209,14 +209,13 @@ def decrypt(text, key):
 
 
 message = input("Введіть текстове повідомлення (8 символів): ").encode('utf-8')
-key = input("Введіть ключ (8 символів): ")
+key = input("Введіть ключ (8 символів): ").encode('utf-8')
 
 if len(key) != 8:
     print("Ключ має бути довжиною 8 символів!!!")
 elif len(message) != 8:
     print("Текстове повідомлення має бути довжиною 8 символів!!!")
 else:
-    key = bytes(key, 'utf-8')
     crypted_text = encrypt(message, key)
     print("Зашифрований текст:", crypted_text.hex())  # Convert bytes to hexadecimal string
     decrypted_text = decrypt(crypted_text, key).decode('utf-8')
